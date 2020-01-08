@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.groww.grpc.commons.stream";
+option java_outer_classname = "NumberStreamProto";
+
+service NumberStreamService{
+    rpc streamIncrementedNumber(InputNumber) returns (stream OutputNumber) {}
+}
+message InputNumber {
+    int64 number = 1;
+}
+
+message OutputNumber {
+    int64 number = 1;
+}
